@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fenrir
+  namespace: fenrir
+  labels:
+    app: fenrir
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: fenrir
+
+  template:
+    metadata:
+      labels:
+        app: fenrir
+
+    spec:
+      containers:
+      - name: fenrir-container
+        image: noormohammad07/fenrir:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: PORT
+          value: "8000"

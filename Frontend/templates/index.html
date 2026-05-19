@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fenrir App</title>
+</head>
+
+<body style="background-color:black; color:yellow;">
+
+<h2>HEY THIS IS FENRIR</h2>
+
+{% for name in data %}
+    <p>{{name}}</p>
+{% endfor %}
+
+<h3># ENVIRONMENT VARIABLES</h3>
+
+{% for key, value in env.items() %}
+    <p>{{ key }} : {{ value }}</p>
+{% endfor %}
+
+</body>
+
+</html>
